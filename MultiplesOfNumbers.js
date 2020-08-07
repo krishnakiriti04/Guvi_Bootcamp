@@ -20,6 +20,6 @@ for(var i=1;i<4;i++)
 {
    mul.push(num * i);
 }
-console.log(mul[0]+" "+mul[1]+" "+mul[2]);
+console.log(mul.join(' '));
   //end-here
 });
