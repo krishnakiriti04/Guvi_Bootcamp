@@ -1,0 +1,67 @@
+Http:
+1. Communication between web servers and clients
+2. Every request is completely independent.
+3. Stateless communication
+4. Uses Tcp/Udp protocol 
+ 
+Get:
+Retrieves data from the server
+Post:
+Submits data into the server
+Put:
+Updates existing data in the server
+Delete:
+Deletes data from the server
+ 
+Get:
+- Used for get data from the web server (eg: when you click on hyperlink, when url is typed in address bar)
+- Get method appends data to the URL
+- There is a limit for the querystring length (limit for data to be sent via get method)
+- Get requests can be cached
+- cannot use get method to change the data in the server
+ 
+Post:
+- Used to submit data to the server(eg: form submit, sending email)
+- with Post methods data can either be appended with URL or message body.
+- No max length for the querystring as data can be sent via message body
+- Caching of post method requests is not allowed
+- Used to change the data in the server
+ 
+Http 1.1:
+1. HOL(Head of Line block)
+- In http 1.1 a new tcp connection is established every time a request is made.
+- eg: a new connection is established when we request for index.html and that connection is blocked until we get response from the server and the same goes on while requesting for css and js files for the same page. All these together makes the rendering very slow.
+ 
+2. Repetition of headers:
+- for every request the header data is also sent along with the request every time as http is stateless protocol
+- we can compress content data but we can’t compress headers headers data
+- keep-alive option enables re-using of same tcp connection for multiple http requests
+These are the drawbacks of http 1.1 that led to http 2
+ 
+Http2:
+- One secure tcp connection is setup in which http requests are transferred in the form of streams.
+- multiplexes multiple tcp connections to one tcp connection.
+- because of multiplexing lot of time is saved in rendering the page by reducing the round trips between client and server(request)
+- Hpack:
+- header data is separated from the http request and can be zipped and it also enables us to reuse the header data which repeats in every request by caching.
+- Hpack reduces the size of the http request size
+-Push frames:
+- push frames enables us to send mandatory resources in advance along with an http response (sends css/js files when html files are requested) which saves multiple requests and time.
+- push frames should be used with care as they can lead to increase in the size of http responses.
+
+
+Get Name, capitals of different countries from restcountries.all
+
+//variable countries contains the array of data that is available in restcountries all website page
+const details = countries.map((val)=>{
+var obj = {"name":val.name,
+"capital":val.capital,
+"region":val.region,
+"languages":val.languages.map((lang)=>lang.name)}
+return obj;})
+
+
+let capitals = details.map((val)=>val.capital);
+
+console.log(details); //prints the name,capital,region,languages of each country
+
