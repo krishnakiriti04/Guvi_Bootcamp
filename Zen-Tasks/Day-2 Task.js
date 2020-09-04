@@ -5,6 +5,8 @@ https://zenclass-day2-task.herokuapp.com/
 
 
 //-----------Task-2----------
+https://github.com/krishnakiriti04/Guvi_Bootcamp/tree/master/Zen-Tasks/Day-2/docs
+
 
 //-----------Task-3----------
 console.log(typeof(1),
