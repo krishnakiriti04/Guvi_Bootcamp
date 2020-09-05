@@ -7,7 +7,8 @@ https://zenclass-day2-task.herokuapp.com/
 https://krishnakiriti04.github.io/Guvi-Tasks/HTML%20cheatsheet/
 
 //-----------Task-2----------
-//Resume html pagehttps://krishnakiriti04.github.io/Guvi-Tasks/resume/
+//Resume html page
+https://krishnakiriti04.github.io/Guvi-Tasks/resume/
 
 //-----------Task-3----------
 console.log(typeof(1),
