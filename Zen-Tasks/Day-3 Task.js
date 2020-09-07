@@ -52,3 +52,22 @@ request.onload = function(){
 
 //-----------task-4----------------
 
+//-----------js code---------------
+
+var request = new XMLHttpRequest()
+var url = "https://api.domainsdb.info/v1/domains/search?domain=facebook&zone=com";
+request.open('GET',url,true)
+request.send()
+
+request.onload = function(){
+	console.log(this.response.header);
+	var data = JSON.parse(this.response);
+	
+	console.log(data);
+	
+}
+
+//got CORS error, solved with the help of chrome extension.
+
+
+
