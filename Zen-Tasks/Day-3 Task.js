@@ -51,23 +51,26 @@ request.onload = function(){
 
 
 //-----------task-4----------------
+//hosted the page here
+
+https://krishnakiriti04.github.io/Guvi-Tasks/DomainAPI/
 
 //-----------js code---------------
-
 var request = new XMLHttpRequest()
 var url = "https://api.domainsdb.info/v1/domains/search?domain=facebook&zone=com";
+var proxy = "https://cors-anywhere.herokuapp.com/"
+url = proxy+url
 request.open('GET',url,true)
 request.send()
 
 request.onload = function(){
 	console.log(this.response.header);
 	var data = JSON.parse(this.response);
-	
 	console.log(data);
 	
 }
 
-//got CORS error, solved with the help of chrome extension.
+//got CORS error, solved with the help of proxy
 
 
 
